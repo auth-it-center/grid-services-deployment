@@ -40,6 +40,9 @@ lfc01.localdomain
 [grid-cluster-nagios-servers]
 nagios01.localdomain
 
+[SAM-NAGIOS]
+nagios22.localdomain
+
 # Site services are services dedicated for
 # your Grid site only (not other sites)
 
@@ -57,6 +60,7 @@ grid-cluster-wms-servers
 grid-cluster-myproxy-servers
 grid-cluster-logical-file-catalogs
 grid-cluster-nagios-servers
+SAM-NAGIOS
 
 [grid-cluster-services:children]
 grid-cluster-site-services
@@ -118,6 +122,7 @@ myproxy-servers
 lfc-servers
 worker-nodes
 apel-servers
+SAM-NAGIOS
 
 [umd]
 [umd:children]

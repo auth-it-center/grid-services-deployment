@@ -1,0 +1,45 @@
+---
+is_nagios: 1
+
+nagios_admin_dns: 
+  - /DC=EU/DC=EGI/C=Country/..../CN=Admin 1
+  - /DC=EU/DC=EGI/C=Country/..../CN=Admin 2
+
+ncg_nagios_admin: contact@localdomain
+
+ncg_vo: ops
+
+nagios_role: ngi
+
+ncg_probes_type: local
+ncg_vo: ops
+nagios_httpd_enable_config: "true"
+nagios_sudo_enable_config: "true"
+nagios_ncg_enable_config: "true"
+nagios_nagios_enable_config: "true"
+nagios_cgi_enable_config: "true"
+
+country_name: CountryName
+nagios_myproxy_name: "NagiosRetrieve"
+
+#NCG_TOPOLOGY
+ncg_topology_use_ldap: "false"
+ncg_topology_use_gocdb: "false"
+ncg_remote_use_sam: "false"
+ncg_remote_use_nagios: "false"
+ncg_topology_use_atp: "true"
+ncg_gocdb_roc_name: NGI_OR_ROC_NAME
+
+storage_elements_to_use:
+  - se01.localdomain
+
+#ATP variable in order to support transparent migration of SAM to CNRS
+atp_root_url: http://mon.egi.eu/atp
+
+#POEM variable in order to support transparent migration of SAM to CNRS
+poem_sync_urls: http://mon.egi.eu/poem/api/0.1/json/
+
+#MyEGI
+myegi_admin_name: Admin 1
+myegi_default_profile: ROC
+myegi_admin_email: contact@localdomain
