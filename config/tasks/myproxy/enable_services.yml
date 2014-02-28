@@ -1,0 +1,2 @@
+- name: Enable myproxy-server and glite-proxy-renewd to run at startup.
+  action: service name=myproxy-server enabled=yes 

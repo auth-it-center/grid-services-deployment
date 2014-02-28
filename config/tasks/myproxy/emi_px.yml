@@ -1,0 +1,2 @@
+- name: Install MyPROXY with glite specific YAIM configurations
+  action: yum name=emi-px state=latest

@@ -1,0 +1,10 @@
+- name: run yaim
+  action: shell sudo -i /opt/glite/yaim/bin/yaim -c -s /opt/glite/yaim/etc/siteinfo/site-info.def -n PX
+  notify:
+    - run post_yaim
+- name: run post_yaim
+  action: lineinfile dest=/etc/myproxy-server.config regexp="allow_self_authorization true" line="allow_self_authorization true"
+  notify:  
+    - run conf_reload
+- name: run conf_reload
+  action: service name=myproxy-server state=reloaded

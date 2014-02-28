@@ -1,0 +1,16 @@
+- hosts: myproxy-servers
+  user: ansible
+  sudo: True
+  vars_files:
+    - vars/distros/${ansible_distribution}-${ansible_lsb.major_release}.yml
+    - "vars/yaim.yml"
+  tasks:
+    - include: tasks/myproxy/emi_px.yml
+    - include: tasks/certificates/config.yml
+    - include: tasks/myproxy/enable_services.yml
+    - include: tasks/myproxy/enable_ports.yml
+    - include: tasks/yaim/config_dirs.yml
+    - include: tasks/yaim/siteinfo.yml
+  handlers:
+    - include: handlers/emi-px.yml
+    - include: handlers/network.yml

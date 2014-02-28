@@ -12,4 +12,4 @@
 - include: myproxy-servers.yml
 - include: lfc-servers.yml
 - include: nagios-update-22.yml
-
+- include: myproxy-servers.yml
